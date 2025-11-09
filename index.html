@@ -1,75 +1,62 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TAT Dondurma & Tatlı</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serinletici Lezzetler</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; background: #fff8f0; }
+  h1 { color: #d94c4c; }
+  .menu-category { margin-bottom: 10px; }
+  .item-list { display: none; margin-left: 20px; }
+  button { padding: 5px 10px; margin-top: 5px; cursor: pointer; }
+</style>
 </head>
 <body>
-    <!-- ÜST MENÜ -->
-    <header>
-        <h1>TAT DONDURMA & TATLI</h1>
-        <nav>
-            <a href="#dondurmalar">Dondurmalar</a>
-            <a href="#pastalar">Yaş Pastalar</a>
-            <a href="#tatlilar">Diğer Tatlılar</a>
-            <a href="#iletisim">İletişim</a>
-        </nav>
-    </header>
+<h1>Serinletici Lezzetler 🍧</h1>
+<p>Doğal malzemelerle, taptaze dondurmalar ve pastalar...</p>
 
-    <!-- ANA SAYFA -->
-    <section id="hero">
-        <h2>Serinletici Lezzetler, Tatlı Anlar 🍧</h2>
-        <p>Doğal malzemelerle, taptaze dondurmalar ve pastalar...</p>
-    </section>
+<div class="menu-category">
+  <button onclick="toggleItems('icecream')">Dondurmalar</button>
+  <ul id="icecream" class="item-list">
+    <li>Çikolatalı</li>
+    <li>Fıstıklı</li>
+    <li>Limonlu</li>
+    <li>Sade</li>
+    <li>Portakallı</li>
+    <li>Naneli</li>
+    <li>Vişneli</li>
+    <li>Karadutlu</li>
+    <li>Karamelli</li>
+    <li>Bademli</li>
+    <li>Portakallı-Çikolatalı</li>
+    <li>Tahinli</li>
+    <li>Yerfıstıklı</li>
+  </ul>
+</div>
 
-    <!-- DONDURMALAR -->
-    <section id="dondurmalar">
-        <h2>Dondurmalar</h2>
-        <div class="menu-grid">
-            <div class="item">Çikolatalı</div>
-            <div class="item">Fıstıklı</div>
-            <div class="item">Limonlu</div>
-            <div class="item">Sade</div>
-            <div class="item">Portakallı</div>
-            <div class="item">Naneli</div>
-            <div class="item">Vişneli</div>
-            <div class="item">Karadutlu</div>
-            <div class="item">Karamelli</div>
-            <div class="item">Bademli</div>
-            <div class="item">Portakallı-Çikolatalı</div>
-            <div class="item">Tahinli</div>
-            <div class="item">Yerfıstıklı</div>
-        </div>
-    </section>
+<div class="menu-category">
+  <button onclick="toggleItems('cakes')">Yaş Pasta Çeşitleri</button>
+  <ul id="cakes" class="item-list">
+    <li>Çikolatalı-Çilekli</li>
+    <li>Çikolatalı-Muzlu</li>
+    <li>Orman Meyveli</li>
+    <li>Çikolatalı-Frambuazlı</li>
+  </ul>
+</div>
 
-    <!-- YAŞ PASTALAR -->
-    <section id="pastalar">
-        <h2>Yaş Pasta Çeşitleri</h2>
-        <p>Adet, 3–4 kişilik, 6–8 kişilik, 8–10 kişilik seçenekleriyle...</p>
-        <div class="menu-grid">
-            <div class="item">Çikolatalı-Çilekli</div>
-            <div class="item">Çikolatalı-Muzlu</div>
-            <div class="item">Orman Meyveli</div>
-            <div class="item">Çikolatalı-Frambuazlı</div>
-        </div>
-    </section>
+<div class="menu-category">
+  <button onclick="toggleItems('others')">Diğer Tatlılar</button>
+  <ul id="others" class="item-list">
+    <li>Yakında menümüze eklenecek özel tatlılar için bizi takip edin!</li>
+  </ul>
+</div>
 
-    <!-- DİĞER TATLILAR -->
-    <section id="tatlilar">
-        <h2>Diğer Tatlılar</h2>
-        <p>Yakında menümüze eklenecek özel tatlılar için bizi takip edin!</p>
-    </section>
-
-    <!-- İLETİŞİM -->
-    <footer id="iletisim">
-        <h2>İletişim</h2>
-        <p>Adres: Bağlıca, Ankara</p>
-        <p>Tel: 0 (312) 123 45 67</p>
-        <p>&copy; 2025 TAT Dondurma. Tüm hakları saklıdır.</p>
-    </footer>
-
-    <script src="script.js"></script>
+<script>
+function toggleItems(id) {
+  const list = document.getElementById(id);
+  list.style.display = list.style.display === 'block' ? 'none' : 'block';
+}
+</script>
 </body>
 </html>
