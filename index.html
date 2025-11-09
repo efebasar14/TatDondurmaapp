@@ -5,34 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Serinletici Lezzetler 🍧</title>
 <style>
-  body { font-family: Arial, sans-serif; background: #fff8f0; margin: 0; padding: 0; }
-  header { background: #d94c4c; color: white; padding: 20px; text-align: center; }
-  h1 { margin: 0; font-size: 2em; }
-  .container { padding: 20px; max-width: 1000px; margin: auto; }
-  .menu-category { margin-bottom: 20px; }
-  button { 
-    width: 100%; 
-    padding: 10px; 
-    background: #f28c8c; 
-    border: none; 
-    color: white; 
-    font-size: 1.1em; 
-    cursor: pointer; 
-    border-radius: 5px;
-    margin-bottom: 5px;
-    transition: background 0.3s;
-  }
-  button:hover { background: #d94c4c; }
-  .item-list { display: none; margin-top: 10px; padding-left: 0; list-style: none; }
-  .item { background: #fff; padding: 10px; margin-bottom: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; align-items: center; }
-  .item img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-right: 15px; }
-  .item div { flex: 1; }
-  a { color: #d94c4c; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  @media(max-width:600px){
-    .item { flex-direction: column; align-items: flex-start; }
-    .item img { width: 100%; height: auto; margin-bottom: 10px; }
-  }
+  body { font-family: Arial, sans-serif; margin: 0; background: #fff8f0; color: #333; }
+  header { background: #d94c4c; color: #fff; padding: 30px 20px; text-align: center; }
+  header h1 { margin: 0; font-size: 2.5em; }
+  header p { margin-top: 10px; font-size: 1.2em; }
+  .container { max-width: 1200px; margin: auto; padding: 20px; }
+  .category-title { font-size: 1.5em; margin-top: 30px; margin-bottom: 15px; color: #d94c4c; }
+  .products { display: flex; flex-wrap: wrap; gap: 20px; }
+  .product-card { background: #fff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 200px; text-align: center; overflow: hidden; transition: transform 0.2s; cursor: pointer; }
+  .product-card:hover { transform: scale(1.05); }
+  .product-card img { width: 100%; height: 150px; object-fit: cover; }
+  .product-info { padding: 10px; }
+  .product-info h3 { margin: 5px 0; font-size: 1.1em; }
+  .product-info p { margin: 5px 0; font-size: 0.9em; color: #666; }
+  .product-info span { font-weight: bold; color: #d94c4c; }
+  button.add-cart { background: #d94c4c; color: #fff; border: none; padding: 8px 12px; border-radius: 5px; margin-top: 5px; cursor: pointer; transition: background 0.3s; }
+  button.add-cart:hover { background: #f28c8c; }
+  .cart { position: fixed; top: 20px; right: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); padding: 15px; width: 250px; max-height: 80vh; overflow-y: auto; }
+  .cart h3 { margin-top: 0; color: #d94c4c; }
+  .cart-item { display: flex; justify-content: space-between; margin-bottom: 10px; }
+  .cart-item button { background: transparent; border: none; color: #d94c4c; cursor: pointer; }
+  .order-btn { width: 100%; padding: 10px; background: #d94c4c; color: #fff; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; font-size: 1.1em; }
+  .order-btn:hover { background: #f28c8c; }
+  @media(max-width:768px){ .products { justify-content: center; } }
 </style>
 </head>
 <body>
@@ -45,59 +40,172 @@
 <div class="container">
 
   <!-- Dondurmalar -->
-  <div class="menu-category">
-    <button onclick="toggleItems('icecream')">Dondurmalar</button>
-    <ul id="icecream" class="item-list">
-      <li class="item"><img src="https://via.placeholder.com/80?text=Çikolatalı" alt="Çikolatalı"><div>Çikolatalı</div></li>
-      <li class="item"><img src="https://via.placeholder.com/80?text=Fıstıklı" alt="Fıstıklı"><div>Fıstıklı</div></li>
-      <li class="item"><img src="https://via.placeholder.com/80?text=Limonlu" alt="Limonlu"><div>Limonlu</div></li>
-      <li class="item"><img src="https://via.placeholder.com/80?text=Sade" alt="Sade"><div>Sade</div></li>
-      <li class="item"><img src="https://via.placeholder.com/80?text=Portakallı" alt="Portakallı"><div>Portakallı</div></li>
-      <li class="item"><img src="https://via.placeholder.com/80?text=Naneli" alt="Naneli"><div>Naneli</div></li>
-      <li class="item"><img src="https://via.placeholder.com/80?text=Vişneli" alt="Vişneli"><div>Vişneli</div></li>
-      <li class="item"><img src="https://via.placeholder.com/80?text=Karadutlu" alt="Karadutlu"><div>Karadutlu</div></li>
-      <li class="item"><img src="https://via.placeholder.com/80?text=Karamelli" alt="Karamelli"><div>Karamelli</div></li>
-      <li class="item"><img src="https://via.placeholder.com/80?text=Bademli" alt="Bademli"><div>Bademli</div></li>
-      <li class="item"><img src="https://via.placeholder.com/80?text=Portakallı+Çikolatalı" alt="Portakallı-Çikolatalı"><div>Portakallı-Çikolatalı</div></li>
-      <li class="item"><img src="https://via.placeholder.com/80?text=Tahinli" alt="Tahinli"><div>Tahinli</div></li>
-      <li class="item"><img src="https://via.placeholder.com/80?text=Yerfıstıklı" alt="Yerfıstıklı"><div>Yerfıstıklı</div></li>
-    </ul>
+  <div class="category-title">Dondurmalar</div>
+  <div class="products" id="icecream">
+    <div class="product-card" data-name="Fıstıklı" data-price="30">
+      <img src="https://static.wixstatic.com/media/beb9fa_2098715ee2874b219f7a397b31c2176d~mv2.jpg" alt="Fıstıklı">
+      <div class="product-info">
+        <h3>Fıstıklı</h3>
+        <p>Taptaze fıstık lezzeti</p>
+        <span>30₺</span><br>
+        <button class="add-cart">Sepete Ekle</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="Çikolatalı" data-price="30">
+      <img src="https://static.wixstatic.com/media/beb9fa_ab36f7c998d24fa287a3194dae2b6736~mv2.jpg" alt="Çikolatalı">
+      <div class="product-info">
+        <h3>Çikolatalı</h3>
+        <p>Yoğun çikolata aroması</p>
+        <span>30₺</span><br>
+        <button class="add-cart">Sepete Ekle</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="Karadutlu" data-price="30">
+      <img src="https://static.wixstatic.com/media/beb9fa_a0a1d926c36247d4ac6d42875946eb21~mv2.jpg" alt="Karadutlu">
+      <div class="product-info">
+        <h3>Karadutlu</h3>
+        <p>Ferah ve meyvemsi</p>
+        <span>30₺</span><br>
+        <button class="add-cart">Sepete Ekle</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="Vişneli" data-price="30">
+      <img src="https://static.wixstatic.com/media/beb9fa_5fc85cabfe554c019646e55f17fc2144~mv2.jpg" alt="Vişneli">
+      <div class="product-info">
+        <h3>Vişneli</h3>
+        <p>Ekşi ve taze vişne aroması</p>
+        <span>30₺</span><br>
+        <button class="add-cart">Sepete Ekle</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="Bademli" data-price="30">
+      <img src="https://static.wixstatic.com/media/beb9fa_8f2989032d5b4c01a381996c817f5c0f~mv2.jpg" alt="Bademli">
+      <div class="product-info">
+        <h3>Bademli</h3>
+        <p>Lezzetli badem aroması</p>
+        <span>30₺</span><br>
+        <button class="add-cart">Sepete Ekle</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="Portakallı" data-price="30">
+      <img src="https://static.wixstatic.com/media/beb9fa_fe731d1de4094cc2a1f6a21246dde937~mv2.jpg" alt="Portakallı">
+      <div class="product-info">
+        <h3>Portakallı</h3>
+        <p>Portakal aromalı ve ferah</p>
+        <span>30₺</span><br>
+        <button class="add-cart">Sepete Ekle</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="Karamelli" data-price="30">
+      <img src="https://static.wixstatic.com/media/beb9fa_7e66a349ce6941e2a9d8a650316801de~mv2.jpg" alt="Karamelli">
+      <div class="product-info">
+        <h3>Karamelli</h3>
+        <p>Tatlı karamelli lezzet</p>
+        <span>30₺</span><br>
+        <button class="add-cart">Sepete Ekle</button>
+      </div>
+    </div>
   </div>
 
   <!-- Yaş Pastalar -->
-  <div class="menu-category">
-    <button onclick="toggleItems('cakes')">Yaş Pasta Çeşitleri</button>
-    <ul id="cakes" class="item-list">
-      <li class="item"><img src="https://via.placeholder.com/80?text=Çikolatalı+Çilekli" alt="Çikolatalı-Çilekli"><div>Çikolatalı-Çilekli (Adet, 3–4 kişilik, 6–8 kişilik, 8–10 kişilik)</div></li>
-      <li class="item"><img src="https://via.placeholder.com/80?text=Çikolatalı+Muzlu" alt="Çikolatalı-Muzlu"><div>Çikolatalı-Muzlu</div></li>
-      <li class="item"><img src="https://via.placeholder.com/80?text=Orman+Meyveli" alt="Orman Meyveli"><div>Orman Meyveli</div></li>
-      <li class="item"><img src="https://via.placeholder.com/80?text=Çikolatalı+Frambuazlı" alt="Çikolatalı-Frambuazlı"><div>Çikolatalı-Frambuazlı</div></li>
-    </ul>
-  </div>
+  <div class="category-title">Yaş Pastalar</div>
+  <div class="products" id="cakes">
+    <div class="product-card" data-name="Çikolatalı-Çilekli (Adet)" data-price="250">
+      <img src="https://via.placeholder.com/200x150?text=Çikolatalı+Çilekli" alt="Çikolatalı-Çilekli">
+      <div class="product-info">
+        <h3>Çikolatalı-Çilekli (Adet)</h3>
+        <p>Tek kişilik / adet</p>
+        <span>250₺</span><br>
+        <button class="add-cart">Sepete Ekle</button>
+      </div>
+    </div>
 
-  <!-- Diğer Tatlılar -->
-  <div class="menu-category">
-    <button onclick="toggleItems('others')">Diğer Tatlılar</button>
-    <ul id="others" class="item-list">
-      <li class="item"><div>Yakında menümüze eklenecek özel tatlılar için bizi takip edin!</div></li>
-    </ul>
-  </div>
+    <div class="product-card" data-name="Çikolatalı-Çilekli (3-4 Kişilik)" data-price="980">
+      <img src="https://via.placeholder.com/200x150?text=Çikolatalı+Çilekli" alt="Çikolatalı-Çilekli">
+      <div class="product-info">
+        <h3>Çikolatalı-Çilekli (3-4 Kişilik)</h3>
+        <p>3–4 kişilik pasta</p>
+        <span>980₺</span><br>
+        <button class="add-cart">Sepete Ekle</button>
+      </div>
+    </div>
 
-  <!-- İletişim & Adres -->
-  <div class="menu-category">
-    <button onclick="toggleItems('contact')">İletişim & Adres</button>
-    <ul id="contact" class="item-list">
-      <li class="item"><div>Telefon: <a href="tel:+905011235506">0501 123 55 06</a></div></li>
-      <li class="item"><div>Adres: Bağlıca, Mermeroğlu Cd. No:61 D:5B, 06930 Etimesgut/Ankara</div></li>
-    </ul>
+    <div class="product-card" data-name="Çikolatalı-Çilekli (6-8 Kişilik)" data-price="1100">
+      <img src="https://via.placeholder.com/200x150?text=Çikolatalı+Çilekli" alt="Çikolatalı-Çilekli">
+      <div class="product-info">
+        <h3>Çikolatalı-Çilekli (6-8 Kişilik)</h3>
+        <p>6–8 kişilik pasta</p>
+        <span>1100₺</span><br>
+        <button class="add-cart">Sepete Ekle</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="Çikolatalı-Çilekli (8-10 Kişilik)" data-price="1300">
+      <img src="https://via.placeholder.com/200x150?text=Çikolatalı+Çilekli" alt="Çikolatalı-Çilekli">
+      <div class="product-info">
+        <h3>Çikolatalı-Çilekli (8-10 Kişilik)</h3>
+        <p>8–10 kişilik pasta</p>
+        <span>1300₺</span><br>
+        <button class="add-cart">Sepete Ekle</button>
+      </div>
+    </div>
   </div>
 
 </div>
 
+<!-- Sepet -->
+<div class="cart" id="cart">
+  <h3>Sepetiniz</h3>
+  <div id="cart-items"></div>
+  <strong>Toplam: <span id="total">0</span>₺</strong>
+  <button class="order-btn" onclick="orderNow()">Hemen Sipariş Ver</button>
+</div>
+
 <script>
-function toggleItems(id) {
-  const list = document.getElementById(id);
-  list.style.display = list.style.display === 'block' ? 'none' : 'block';
+let cart = [];
+function updateCart(){
+  const cartItems = document.getElementById('cart-items');
+  const totalEl = document.getElementById('total');
+  cartItems.innerHTML = '';
+  let total = 0;
+  cart.forEach((item, index)=>{
+    total += item.price;
+    const div = document.createElement('div');
+    div.className = 'cart-item';
+    div.innerHTML = `${item.name} - ${item.price}₺ <button onclick="removeItem(${index})">❌</button>`;
+    cartItems.appendChild(div);
+  });
+  totalEl.textContent = total;
+}
+
+function removeItem(index){
+  cart.splice(index,1);
+  updateCart();
+}
+
+document.querySelectorAll('.add-cart').forEach(btn=>{
+  btn.addEventListener('click', (e)=>{
+    const card = e.target.closest('.product-card');
+    const name = card.dataset.name;
+    const price = parseFloat(card.dataset.price);
+    cart.push({name, price});
+    updateCart();
+  });
+});
+
+function orderNow(){
+  if(cart.length===0){ alert('Sepetiniz boş!'); return; }
+  let message = 'Merhaba! Sipariş vermek istiyorum:%0A';
+  cart.forEach(item=>{ message += `- ${item.name}: ${item.price}₺%0A`; });
+  message += `Toplam: ${document.getElementById('total').textContent}₺`;
+  const phone = '905011235506';
+  window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
 }
 </script>
 
