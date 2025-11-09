@@ -3,53 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Serinletici Lezzetler</title>
+<title>Serinletici Lezzetler 🍧</title>
 <style>
-  body { font-family: Arial, sans-serif; padding: 20px; background: #fff8f0; }
-  h1 { color: #d94c4c; }
-  .menu-category { margin-bottom: 10px; }
-  .item-list { display: none; margin-left: 20px; }
-  button { padding: 5px 10px; margin-top: 5px; cursor: pointer; }
+  body { font-family: Arial, sans-serif; background: #fff8f0; margin: 0; padding: 0; }
+  header { background: #d94c4c; color: white; padding: 20px; text-align: center; }
+  h1 { margin: 0; font-size: 2em; }
+  .container { padding: 20px; max-width: 1000px; margin: auto; }
+  .menu-category { margin-bottom: 20px; }
+  button { 
+    width: 100%; 
+    padding: 10px; 
+    background: #f28c8c; 
+    border: none; 
+    color: white; 
+    font-size: 1.1em; 
+    cursor: pointer; 
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: background 0.3s;
+  }
+  button:hover { background: #d94c4c; }
+  .item-list { display: none; margin-top: 10px; padding-left: 0; list-style: none; }
+  .item { background: #fff; padding: 10px; margin-bottom: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; align-items: center; }
+  .item img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-right: 15px; }
+  .item div { flex: 1; }
+  a { color: #d94c4c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  @media(max-width:600px){
+    .item { flex-direction: column; align-items: flex-start; }
+    .item img { width: 100%; height: auto; margin-bottom: 10px; }
+  }
 </style>
 </head>
 <body>
-<h1>Serinletici Lezzetler 🍧</h1>
-<p>Doğal malzemelerle, taptaze dondurmalar ve pastalar...</p>
 
-<div class="menu-category">
-  <button onclick="toggleItems('icecream')">Dondurmalar</button>
-  <ul id="icecream" class="item-list">
-    <li>Çikolatalı</li>
-    <li>Fıstıklı</li>
-    <li>Limonlu</li>
-    <li>Sade</li>
-    <li>Portakallı</li>
-    <li>Naneli</li>
-    <li>Vişneli</li>
-    <li>Karadutlu</li>
-    <li>Karamelli</li>
-    <li>Bademli</li>
-    <li>Portakallı-Çikolatalı</li>
-    <li>Tahinli</li>
-    <li>Yerfıstıklı</li>
-  </ul>
-</div>
+<header>
+  <h1>Serinletici Lezzetler 🍧</h1>
+  <p>Doğal malzemelerle, taptaze dondurmalar ve pastalar</p>
+</header>
 
-<div class="menu-category">
-  <button onclick="toggleItems('cakes')">Yaş Pasta Çeşitleri</button>
-  <ul id="cakes" class="item-list">
-    <li>Çikolatalı-Çilekli</li>
-    <li>Çikolatalı-Muzlu</li>
-    <li>Orman Meyveli</li>
-    <li>Çikolatalı-Frambuazlı</li>
-  </ul>
-</div>
+<div class="container">
 
-<div class="menu-category">
-  <button onclick="toggleItems('others')">Diğer Tatlılar</button>
-  <ul id="others" class="item-list">
-    <li>Yakında menümüze eklenecek özel tatlılar için bizi takip edin!</li>
-  </ul>
+  <!-- Dondurmalar -->
+  <div class="menu-category">
+    <button onclick="toggleItems('icecream')">Dondurmalar</button>
+    <ul id="icecream" class="item-list">
+      <li class="item"><img src="https://via.placeholder.com/80?text=Çikolatalı" alt="Çikolatalı"><div>Çikolatalı</div></li>
+      <li class="item"><img src="https://via.placeholder.com/80?text=Fıstıklı" alt="Fıstıklı"><div>Fıstıklı</div></li>
+      <li class="item"><img src="https://via.placeholder.com/80?text=Limonlu" alt="Limonlu"><div>Limonlu</div></li>
+      <li class="item"><img src="https://via.placeholder.com/80?text=Sade" alt="Sade"><div>Sade</div></li>
+      <li class="item"><img src="https://via.placeholder.com/80?text=Portakallı" alt="Portakallı"><div>Portakallı</div></li>
+      <li class="item"><img src="https://via.placeholder.com/80?text=Naneli" alt="Naneli"><div>Naneli</div></li>
+      <li class="item"><img src="https://via.placeholder.com/80?text=Vişneli" alt="Vişneli"><div>Vişneli</div></li>
+      <li class="item"><img src="https://via.placeholder.com/80?text=Karadutlu" alt="Karadutlu"><div>Karadutlu</div></li>
+      <li class="item"><img src="https://via.placeholder.com/80?text=Karamelli" alt="Karamelli"><div>Karamelli</div></li>
+      <li class="item"><img src="https://via.placeholder.com/80?text=Bademli" alt="Bademli"><div>Bademli</div></li>
+      <li class="item"><img src="https://via.placeholder.com/80?text=Portakallı+Çikolatalı" alt="Portakallı-Çikolatalı"><div>Portakallı-Çikolatalı</div></li>
+      <li class="item"><img src="https://via.placeholder.com/80?text=Tahinli" alt="Tahinli"><div>Tahinli</div></li>
+      <li class="item"><img src="https://via.placeholder.com/80?text=Yerfıstıklı" alt="Yerfıstıklı"><div>Yerfıstıklı</div></li>
+    </ul>
+  </div>
+
+  <!-- Yaş Pastalar -->
+  <div class="menu-category">
+    <button onclick="toggleItems('cakes')">Yaş Pasta Çeşitleri</button>
+    <ul id="cakes" class="item-list">
+      <li class="item"><img src="https://via.placeholder.com/80?text=Çikolatalı+Çilekli" alt="Çikolatalı-Çilekli"><div>Çikolatalı-Çilekli (Adet, 3–4 kişilik, 6–8 kişilik, 8–10 kişilik)</div></li>
+      <li class="item"><img src="https://via.placeholder.com/80?text=Çikolatalı+Muzlu" alt="Çikolatalı-Muzlu"><div>Çikolatalı-Muzlu</div></li>
+      <li class="item"><img src="https://via.placeholder.com/80?text=Orman+Meyveli" alt="Orman Meyveli"><div>Orman Meyveli</div></li>
+      <li class="item"><img src="https://via.placeholder.com/80?text=Çikolatalı+Frambuazlı" alt="Çikolatalı-Frambuazlı"><div>Çikolatalı-Frambuazlı</div></li>
+    </ul>
+  </div>
+
+  <!-- Diğer Tatlılar -->
+  <div class="menu-category">
+    <button onclick="toggleItems('others')">Diğer Tatlılar</button>
+    <ul id="others" class="item-list">
+      <li class="item"><div>Yakında menümüze eklenecek özel tatlılar için bizi takip edin!</div></li>
+    </ul>
+  </div>
+
+  <!-- İletişim & Adres -->
+  <div class="menu-category">
+    <button onclick="toggleItems('contact')">İletişim & Adres</button>
+    <ul id="contact" class="item-list">
+      <li class="item"><div>Telefon: <a href="tel:+905011235506">0501 123 55 06</a></div></li>
+      <li class="item"><div>Adres: Bağlıca, Mermeroğlu Cd. No:61 D:5B, 06930 Etimesgut/Ankara</div></li>
+    </ul>
+  </div>
+
 </div>
 
 <script>
@@ -58,5 +100,6 @@ function toggleItems(id) {
   list.style.display = list.style.display === 'block' ? 'none' : 'block';
 }
 </script>
+
 </body>
 </html>
